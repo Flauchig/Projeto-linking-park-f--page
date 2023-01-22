@@ -1,0 +1,160 @@
+body {
+  font-family: "Poppins";
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  /* flex-direction serve para definir em que formato vai ser o item selecionado no caso a cima row = linha  */
+  justify-content: space-between;
+  /* é um termo para usar junto com a flexbox  assim definfindo um metodo de espaçamento  */
+
+  padding: 30px;
+  /* serve para dar espaçamentos quando colocamos um valor ele vale para todos os lado  podemos colocar mais de um valor  */
+
+  max-width: 1440px;
+  /* define um tamanho maximo */
+  margin: 0 auto;
+}
+
+.header .logo {
+  width: 150px;
+}
+
+.header .menu {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.header nav li a {
+  font-weight: bold;
+  color: white;
+  font-size: 24px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  transition: 0.5s;
+}
+
+.header nav li a:hover {
+  background-color: red;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  height: calc(100vh - 450px);
+  /* usamos para calcular o viewport que  é os 100vh =100% da tela com o tamanho do menu  */
+  padding: 0 30px 30px;
+  /* aqui estou manipulando espaçamento de 3 valores  */
+}
+
+.container .banda {
+  width: 100%;
+  object-fit: contain;
+  max-width: 500px;
+}
+
+img.titulo-img {
+  max-width: 800px;
+}
+
+.container .descricao {
+  color: rgb(241, 234, 234);
+  width: 80%;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.container .botao-trailer {
+  background-color: red;
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 50px;
+  border: none;
+  text-transform: uppercase;
+  margin-top: 30px;
+
+  transition: 0.5s all ease-in-out;
+  /* Aqui estamos fazendo uma transição para aumentar o tamanho do botâo  */
+}
+.container .botao-trailer:hover {
+  transform: scale(1.1);
+  /* aqui estamos escolhendo o tamanho que o botao vai aumentar  */
+}
+
+.fundo-video {
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  object-fit: fill;
+  background: red;
+}
+
+.fundo-video .video {
+  height: 100vh;
+}
+
+.fundo-video::after {
+  position: absolute;
+  content: "";
+  background-color: brown;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    rgb(29, 29, 29) 0%,
+    rgba(0, 0, 0, 0.8) 40%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(54, 51, 51, 0.8);
+  visibility: hidden;
+}
+
+.conteudo-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  border-radius: 10px;
+  gap: 15px;
+}
+
+.fechar-modal {
+  background-color: rgb(8, 8, 8);
+  color: red;
+  font-weight: bold;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.modal iframe {
+    border-width: 0;
+    width: 700px;
+    height: 400px;
+}
+
+.modal.aberto {
+  opacity: 1;
+  visibility: visible;
+}
